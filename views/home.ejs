@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+<nav class= "navBar">
+    <% if (currentUser) { %>
+    Welcome <%= currentUser.username %>
+      <form action="/sessions?_method=DELETE" method="POST">
+        <input class ="logOut" type="submit" value="Log Out"/>
+      </form>
+    <% } else { %>
+      <button type="button" name="button"><a href="/users/new">Sign Up</a></button>
+      <button type="button" name="button"><a href="/sessions/new">Log In</a></button>
+    <% } %>
+</nav>
+  <h1 class="pageTitle">Welcome To The Schedule App</h1>
+<%- include('./partials/footer.ejs') %>
