@@ -31,7 +31,7 @@ router.post('/', isAuthenticated, (req,res) => {
 		if (error){
 			console.log(error)
 		}
-    res.redirect('/schedule');
+    res.redirect('/');
   });
 })
 
@@ -61,7 +61,7 @@ router.get('/:id', isAuthenticated,(req, res)=>{
 // // delete
 router.delete('/:id', isAuthenticated, (req,res) => {
   Group.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('/schedule');
+    res.redirect('/');
     console.log('deleted Group')
   })
 })
@@ -94,7 +94,7 @@ router.put('/:id', isAuthenticated, (req, res, next) => {
         console.log('updated')
       }
   })
-  res.redirect('/schedule')
+  res.redirect('/')
 })
 
 

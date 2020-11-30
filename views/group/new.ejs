@@ -1,0 +1,30 @@
+<%-include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<div class="containerNew">
+    <h1>Create Group</h1>
+    <form action="/group" method="POST">
+  <fieldset>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title"/>
+  </fieldset>
+  <fieldset>
+    <label for="description">Description</label>
+    <input type="textarea" name="description" id="description" />
+  </fieldset>
+  <fieldset>
+    <label for="img">Image</label>
+    <input type="text" name="img" id="img" />
+  </fieldset>
+  <fieldset>
+    <label for="minMembers">Minimum Members Needed</label>
+    <input type="text" name="minMembers" id="minMembers" />
+  </fieldset>
+  <fieldset>
+    <label for="maxMembers">Maximum Members Needed</label>
+    <input type="text" name="maxMembers" id="maxMembers" />
+  </fieldset>
+    <input class="btnBackground" type="submit" value="Create Group">
+  </form>
+</div>
+
+<%-include('../partials/footer.ejs') %>

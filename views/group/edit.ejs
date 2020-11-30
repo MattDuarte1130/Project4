@@ -1,0 +1,33 @@
+<%-include('../partials/header.ejs') %>
+<div class="containerNew">
+    <h1>Edit Playlist</h1>
+    <form method="POST" action="/group/<%=idForGroup%>?_method=PUT">
+            <fieldset>
+              <label for="title">Title:</label>
+              <input id ="title" type="text" name="title"
+              placeholder="New name" value="<%=idOfGroupToEdit.title%>">
+            </fieldset>
+            <fieldset>
+              <label for="description">Description:</label>
+              <input id ="description" type="text" name="description"
+              placeholder="New description" value="<%=idOfGroupToEdit.description%>">
+            </fieldset>
+              <fieldset>
+                <label for="img">Image:</label>
+                <input id ="img" type="text" name="img"
+                placeholder="New Image link" value="<%=idOfGroupToEdit.img%>">
+              </fieldset>
+              <fieldset>
+                <label for="minMembers">Minum Members Required:</label>
+                <input id ="minMembers" type="text" name="minMembers"
+                placeholder="Minum Members" value="<%=idOfGroupToEdit.minMembers%>">
+              </fieldset>
+              <fieldset>
+                <label for="maxMembers">Maximum Members Required:</label>
+                <input id ="maxMembers" type="text" name="maxMembers"
+                placeholder="Max Members" value="<%=idOfGroupToEdit.maxMembers%>">
+              </fieldset>
+            <button class="btnBackground" >Update The Group</button>
+          </form>
+</div>
+<%-include('../partials/footer.ejs') %>
