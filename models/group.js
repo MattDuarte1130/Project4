@@ -5,7 +5,7 @@ const groupSchema = new mongoose.Schema({
     title:  { type: String, required: true },
     description:  { type: String, required: true },
     img: { type: String, required: true },
-    members: [{type: String}],
+    members: [String],
     minMembers: {type: Number, default: 0, required: true },
     maxMembers: {type: Number, default: 0, required: true },
     sunday: Boolean,

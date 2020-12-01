@@ -3,8 +3,9 @@
 <div class="playlistShowContainer">
         <h1> <%=group.title; %> </h1>
 
-        <a href="/group/<%=group.id;%>/video"><img class="groupShowImg" src="<%=group.img; %>" alt="<%=group.title %>" width="640" height="360"></a>
+        <img class="groupShowImg" src="<%=group.img; %>" alt="<%=group.title %>" width="640" height="360">
         <h3> Description: <%=group.description; %> </h3>
+        <h3><a href="/group/<%=group.id;%>/members">Members</a></h3>
         <p><a href="/group/<%=group.id;%>/edit "><button class="btnBackground">Edit group</button></a></p>
             <form action="/group/<%=group.id; %>?_method=DELETE" method="POST">
               <form>

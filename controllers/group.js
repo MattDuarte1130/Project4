@@ -97,6 +97,38 @@ router.put('/:id', isAuthenticated, (req, res, next) => {
   res.redirect('/')
 })
 
+// members show page
+router.get('/:id/members', isAuthenticated, (req, res, next) => {
+  Group.findById(req.params.id, (err, foundMembers)=>{
+      res.render('group/members.ejs', {
+          group:foundMembers,
+          currentUser: req.session.currentUser,
+      });
+  });
+});
+
+// add members page
+router.get('/:id/members/add', isAuthenticated, (req, res) => {
+Group.findById(req.params.id, (err, data) => {
+  res.render('group/addMember.ejs', {
+    idOfGroupToEdit:data,
+    idForGroup: req.params.id,
+    currentUser: req.session.currentUser,
+    })
+  })
+})
+
+
+// add member
+router.put('/:id/members', isAuthenticated, (req, res, next) => {
+  Group.findById(req.params.id, (err, data) => {
+    data.members.push(req.body.members)
+    data.save(function(err, updatedData) {
+        console.log(updatedData)
+    })
+  })
+  res.redirect(`/group`)
+})
 
 
 

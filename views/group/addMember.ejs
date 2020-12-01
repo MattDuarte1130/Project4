@@ -1,0 +1,14 @@
+<%-include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<div class="containerNew">
+    <h1>Add Member</h1>
+    <form method="POST" action="/group/<%=idForGroup%>/members?_method=PUT">
+            <fieldset>
+              <label for="members">Member's Username:</label>
+              <input id ="members" type="text" name="members"
+              placeholder="New Member Username" value="">
+            </fieldset>
+            <button>Add The Member</button>
+          </form>
+</div>
+<%-include('../partials/footer.ejs') %>
