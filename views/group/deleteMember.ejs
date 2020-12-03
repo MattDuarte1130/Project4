@@ -1,0 +1,9 @@
+<%-include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<div class="containerNew">
+    <h1>Confirm Removing The Member</h1>
+    <form method="POST" action="/group/<%=idForGroup%>/members/<%=memberId%>?_method=PUT">
+      <button class="btnBackground">Remove Member</button>
+    </form>
+</div>
+<%-include('../partials/footer.ejs') %>

@@ -1,0 +1,15 @@
+<%-include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<div class="playlistShowContainer">
+<h1><%=group.members[memberId]%></h1>
+
+  <div class="itemContainer">
+      <p><a href="/group/<%=group.id%>/members"><button class="btnBackground">Back To Group</button></a></p>
+      <p><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btnBackground" >Edit Member</button></a></p>
+      <p><a href="/group/<%=group.id%>/members/<%= memberId %>/delete "><button class="btnBackground" >Delete Member</button></a></p>
+  </div>
+  </div>
+
+
+<%-include('../partials/footer.ejs') %>
+</div>

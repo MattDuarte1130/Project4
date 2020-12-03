@@ -121,13 +121,111 @@ Group.findById(req.params.id, (err, data) => {
 
 // add member
 router.put('/:id/members', isAuthenticated, (req, res, next) => {
-  Group.findById(req.params.id, (err, data) => {
+	let membersData = {
+		group: {
+			groupId: req.params.id,
+			memberId: req.params.indexOfMember
+		}
+	}
+	Group.findById(req.params.id, (err, data) => {
     data.members.push(req.body.members)
     data.save(function(err, updatedData) {
         console.log(updatedData)
     })
   })
-  res.redirect(`/group`)
+  res.redirect(`/group/${membersData.group.groupId}/members`)
+})
+
+
+// member profile page
+router.get('/:id/members/:indexOfMember', isAuthenticated,(req, res)=>{
+	let membersData = {
+		group: {
+			groupId: req.params.id,
+			memberId: req.params.indexOfMember
+		}
+	}
+    Group.findById(req.params.id, (err, foundMember)=>{
+        res.render('group/memberShow.ejs', {
+            group:foundMember,
+						memberId: membersData.group.memberId,
+            currentUser: req.session.currentUser
+        });
+    });
+});
+
+// edit members
+
+router.get('/:id/members/:indexOfMember/edit', isAuthenticated, (req, res) => {
+	let membersData = {
+		group: {
+			groupId: req.params.id,
+			memberId: req.params.indexOfMember
+		}
+	}
+Group.findById(req.params.id, (err, data) => {
+  res.render('group/editMember.ejs', {
+    idOfGroupToEdit:data,
+    idForGroup: req.params.id,
+		memberId: membersData.group.memberId,
+    currentUser: req.session.currentUser,
+
+    })
+  })
+})
+
+// put edit
+router.put('/:id/members/:indexOfMember', isAuthenticated, (req, res, next) => {
+	let membersData = {
+		group: {
+			groupId: req.params.id,
+			memberId: req.params.indexOfMember
+		}
+	}
+	Group.findById(req.params.id, (err, data) => {
+    data.members.splice(membersData.group.memberId, 1, req.body.members)
+    data.save(function(err, updatedData) {
+        console.log(updatedData)
+    })
+  })
+  res.redirect(`/group/${membersData.group.groupId}/members`)
+})
+
+// delete Member
+
+router.get('/:id/members/:indexOfMember/delete', isAuthenticated, (req, res) => {
+	let membersData = {
+		group: {
+			groupId: req.params.id,
+			memberId: req.params.indexOfMember
+		}
+	}
+Group.findById(req.params.id, (err, data) => {
+  res.render('group/deleteMember.ejs', {
+    idOfGroupToEdit:data,
+    idForGroup: req.params.id,
+		memberId: membersData.group.memberId,
+    currentUser: req.session.currentUser,
+
+    })
+  })
+})
+
+// put delete
+router.put('/:id/members/:indexOfMember', isAuthenticated, (req, res, next) => {
+	let membersData = {
+		group: {
+			groupId: req.params.id,
+			memberId: req.params.indexOfMember
+		}
+	}
+	Group.findById(req.params.id, (err, data) => {
+    data.members.splice(membersData.group.memberId, 1)
+    data.save(function(err, updatedData) {
+        console.log(updatedData)
+    })
+  })
+  res.redirect(`/group/${membersData.group.groupId}/members`)
 })
 
 

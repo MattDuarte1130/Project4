@@ -5,7 +5,7 @@
     <% for(let i = 0; i < group.members.length; i++){ %>
       <div class="indexContainer">
       <li>
-        <h4 class='groupMembers'><%=group.members[i]; %></h4>
+        <h4 class='groupMembers'><a href="/group/<%=group.id%>/members/<%=[i]%>/"><%=group.members[i]; %></a></h4>
         </li>
         </div>
     <% } %>
