@@ -3,7 +3,7 @@
     <a href="/group/new">Create A New Group</a> |
     <div class="userNav">
     <% if (currentUser) { %>
-    User: <%= currentUser.username %>
+    User: <a href="/users/<%= currentUser._id %>"><%= currentUser.username %></a>
       <form action="/sessions?_method=DELETE" method="POST">
         <input class="btnBackground" type="submit" value="Log Out"/>
       </form>

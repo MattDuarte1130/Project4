@@ -24,7 +24,8 @@ router.get('/new', isAuthenticated, (req, res) => {
 router.post('/', isAuthenticated, (req,res) => {
 	const data = {
 		...req.body,
-		members: req.session.currentUser.username
+		members: req.session.currentUser.username,
+		userId: req.session.currentUser._id,
 	}
 	console.log(data)
   Group.create(data, (error, createdGroup)=>{
@@ -39,7 +40,7 @@ router.post('/', isAuthenticated, (req,res) => {
 
 router.get('/', isAuthenticated, (req, res)=>{
 
-    Group.find({members: req.session.currentUser.username}, (error, allGroups)=>{
+    Group.find({$or:[{members: req.session.currentUser.username}, {userId: req.session.currentUser.userId}]}, (error, allGroups)=>{
         res.render('group/index.ejs', {
             group: allGroups,
             currentUser: req.session.currentUser
