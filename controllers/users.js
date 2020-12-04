@@ -12,7 +12,7 @@ const isAuthenticated = (req, res, next) =>  {
 }
 
 // create
-users.get('/new', isAuthenticated, (req, res) => {
+users.get('/new', (req, res) => {
   res.render('users/new.ejs', { currentUser: req.session.currentUser })
 })
 
