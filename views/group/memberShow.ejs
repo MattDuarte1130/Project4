@@ -9,7 +9,9 @@
       <% if(currentUser.username == group.members[memberId] ) { %>
         <p><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btnBackground" >Edit Member</button></a></p>
         <p><a href="/group/<%=group.id%>/members/<%= memberId %>/delete "><button class="btnBackground" >Delete Member</button></a></p>
-      <%  } else { %>
+      <%  } else if(currentUser._id == group.userId){ %>
+        <p><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btnBackground" >Edit Member</button></a></p>
+        <p><a href="/group/<%=group.id%>/members/<%= memberId %>/delete "><button class="btnBackground" >Delete Member</button></a></p>
        <% } %>
 
   </div>

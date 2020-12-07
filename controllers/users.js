@@ -79,6 +79,7 @@ users.put('/:id', isAuthenticated,  (req, res, next) => {
       }
       if(updatedUser.saturday == "on"){
         updatedUser.saturday = true
+				console.log(data)
         console.log(updatedUser)
       } else {
         updatedUser.saturday = false
@@ -97,6 +98,8 @@ users.get('/:id', isAuthenticated,(req, res)=>{
         });
     });
 });
+
+
 
 
 

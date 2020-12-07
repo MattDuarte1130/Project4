@@ -189,7 +189,7 @@ router.put('/:id/members/:indexOfMember', isAuthenticated, (req, res, next) => {
         console.log(updatedData)
     })
   })
-  res.redirect(`/group/${membersData.group.groupId}/members`)
+  res.redirect(`/group/${membersData.group.groupId}`)
 })
 
 // delete Member
