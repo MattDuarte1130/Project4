@@ -4,8 +4,43 @@
 <h1><%=group.members[memberId]%></h1>
 
   <div class="itemContainer">
-      <p><a href="/group/<%=group.id%>/members"><button class="btnBackground">Back To Group</button></a></p>
-
+      <h3><%=group.members[memberId]; %>'s Schedule </h3>
+      <% if(group.sunday[memberId] == true) { %>
+         <h4 style="color:green">Sunday = avaliable</h4>
+      <%  } else { %>
+         <h4 style="color:red">Sunday = Not avaliable</h4>
+       <% } %>
+       <% if(group.monday[memberId] == true) { %>
+         <h4 style="color:green">Monday = avaliable</h4>
+      <%  } else { %>
+         <h4 style="color:red">Monday = Not avaliable</h4>
+       <% } %>
+        <% if(group.tuesday[memberId] == true) { %>
+          <h4 style="color:green">Tuesday = avaliable</h4>
+       <%  } else { %>
+          <h4 style="color:red">Tuesday = Not avaliable</h4>
+        <% } %>
+         <% if(group.wednesday[memberId] == true) { %>
+           <h4 style="color:green">Wednesday = avaliable</h4>
+        <%  } else { %>
+           <h4 style="color:red">Wednesday = Not avaliable</h4>
+         <% } %>
+          <% if(group.thursday[memberId] == true) { %>
+            <h4 style="color:green">Thursday = avaliable</h4>
+         <%  } else { %>
+            <h4 style="color:red">Thursday = Not avaliable</h4>
+          <% } %>
+           <% if(group.friday[memberId] == true) { %>
+             <h4 style="color:green">Friday = avaliable</h4>
+          <%  } else { %>
+             <h4 style="color:red">Friday = Not avaliable</h4>
+           <% } %>
+            <% if(group.saturday[memberId] == true) { %>
+              <h4 style="color:green">Saturday = avaliable</h4>
+           <%  } else { %>
+              <h4 style="color:red">Saturday = Not avaliable</h4>
+            <% } %>
+            <p><a href="/group/<%=group.id%>/members"><button class="btnBackground">Back To Group</button></a></p>
       <% if(currentUser.username == group.members[memberId] ) { %>
         <p><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btnBackground" >Edit Member</button></a></p>
         <p><a href="/group/<%=group.id%>/members/<%= memberId %>/delete "><button class="btnBackground" >Delete Member</button></a></p>
@@ -19,4 +54,3 @@
 
 
 <%-include('../partials/footer.ejs') %>
-</div>

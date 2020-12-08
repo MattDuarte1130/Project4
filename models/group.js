@@ -8,13 +8,13 @@ const groupSchema = new mongoose.Schema({
     members: [String],
     minMembers: {type: Number, default: 0, required: true },
     maxMembers: {type: Number, default: 0, required: true },
-    sunday: Boolean,
-    monday: Boolean,
-    tuesday: Boolean,
-    wednesday: Boolean,
-    thursday: Boolean,
-    friday: Boolean,
-    saturday: Boolean,
+    sunday: [Boolean],
+    monday: [Boolean],
+    tuesday: [Boolean],
+    wednesday: [Boolean],
+    thursday: [Boolean],
+    friday: [Boolean],
+    saturday: [Boolean],
 });
 
 const Group = mongoose.model('Group', groupSchema);

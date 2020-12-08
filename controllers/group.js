@@ -183,9 +183,51 @@ router.put('/:id/members/:indexOfMember', isAuthenticated, (req, res, next) => {
 			memberId: req.params.indexOfMember
 		}
 	}
+	if(req.body.sunday == "on"){
+ 	 req.body.sunday = true
+  } else {
+ 	 req.body.sunday = false
+  }
+  if(req.body.monday == "on"){
+ 	 req.body.monday = true
+  } else {
+ 	 req.body.monday = false
+  }
+  if(req.body.tuesday == "on"){
+ 	 req.body.tuesday = true
+  } else {
+ 	 req.body.tuesday = false
+  }
+  if(req.body.wednesday == "on"){
+ 	 req.body.wednesday = true
+  } else {
+ 	 req.body.wednesday = false
+  }
+  if(req.body.thursday == "on"){
+ 	 req.body.thursday = true
+  } else {
+ 	 req.body.thursday = false
+  }
+  if(req.body.friday == "on"){
+ 	 req.body.friday = true
+  } else {
+ 	 req.body.friday = false
+  }
+  if(req.body.saturday == "on"){
+ 	 req.body.saturday = true
+ } else {
+	 req.body.saturday = false
+	 }
 	Group.findById(req.params.id, (err, data) => {
     data.members.splice(membersData.group.memberId, 1, req.body.members)
-    data.save(function(err, updatedData) {
+		data.sunday.splice(membersData.group.memberId, 1, req.body.sunday)
+		data.monday.splice(membersData.group.memberId, 1, req.body.monday)
+		data.tuesday.splice(membersData.group.memberId, 1, req.body.tuesday)
+		data.wednesday.splice(membersData.group.memberId, 1, req.body.wednesday)
+		data.thursday.splice(membersData.group.memberId, 1, req.body.thursday)
+		data.friday.splice(membersData.group.memberId, 1, req.body.friday)
+		data.saturday.splice(membersData.group.memberId, 1, req.body.saturday)
+		data.save(function(err, updatedData) {
         console.log(updatedData)
     })
   })
