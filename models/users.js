@@ -5,13 +5,13 @@ const userSchema = Schema({
   username: { type: String, unique: true, required: true },
   password: String,
   profilePic: String,
-  sunday: {type: Boolean},
-  monday: {type: Boolean},
-  tuesday: {type: Boolean},
-  wednesday: {type: Boolean},
-  thursday: {type: Boolean},
-  friday: {type: Boolean},
-  saturday: {type: Boolean},
+  sunday: {type: Boolean, default: false},
+  monday: {type: Boolean, default: false},
+  tuesday: {type: Boolean, default: false},
+  wednesday: {type: Boolean, default: false},
+  thursday: {type: Boolean, default: false},
+  friday: {type: Boolean, default: false},
+  saturday: {type: Boolean, default: false},
 })
 
 const User = mongoose.model('User', userSchema)

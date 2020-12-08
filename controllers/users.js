@@ -37,6 +37,7 @@ User.findById(req.params.id, (err, data) => {
 
 //put edit
 users.put('/:id', isAuthenticated,  (req, res, next) => {
+	console.log(req.body)
   const updatedUser = {
    sunday: req.body.sunday,
    monday: req.body.monday,
@@ -46,45 +47,44 @@ users.put('/:id', isAuthenticated,  (req, res, next) => {
    friday: req.body.friday,
    saturday: req.body.saturday,
  }
-  User.findByIdAndUpdate(req.params.id, updatedUser, (err, data) => {
-      if(updatedUser.sunday == "on"){
-        updatedUser.sunday = true
-      } else {
-        updatedUser.sunday = false
-      }
-      if(updatedUser.monday == "on"){
-        updatedUser.monday = true
-      } else {
-        updatedUser.monday = false
-      }
-      if(updatedUser.tuesday == "on"){
-        updatedUser.tuesday = true
-      } else {
-        updatedUser.tuesday = false
-      }
-      if(updatedUser.wednesday == "on"){
-        updatedUser.wednesday = true
-      } else {
-        updatedUser.wednesday = false
-      }
-      if(updatedUser.thursday == "on"){
-        updatedUser.thursday = true
-      } else {
-        updatedUser.thursday = false
-      }
-      if(updatedUser.friday == "on"){
-        updatedUser.friday = true
-      } else {
-        updatedUser.friday = false
-      }
-      if(updatedUser.saturday == "on"){
-        updatedUser.saturday = true
-				console.log(data)
-        console.log(updatedUser)
-      } else {
-        updatedUser.saturday = false
-        console.log(updatedUser)
-      }
+ if(updatedUser.sunday == "on"){
+	 updatedUser.sunday = true
+ } else {
+	 updatedUser.sunday = false
+ }
+ if(updatedUser.monday == "on"){
+	 updatedUser.monday = true
+ } else {
+	 updatedUser.monday = false
+ }
+ if(updatedUser.tuesday == "on"){
+	 updatedUser.tuesday = true
+ } else {
+	 updatedUser.tuesday = false
+ }
+ if(updatedUser.wednesday == "on"){
+	 updatedUser.wednesday = true
+ } else {
+	 updatedUser.wednesday = false
+ }
+ if(updatedUser.thursday == "on"){
+	 updatedUser.thursday = true
+ } else {
+	 updatedUser.thursday = false
+ }
+ if(updatedUser.friday == "on"){
+	 updatedUser.friday = true
+ } else {
+	 updatedUser.friday = false
+ }
+ if(updatedUser.saturday == "on"){
+	 updatedUser.saturday = true
+	 console.log(updatedUser)
+ } else {
+	 updatedUser.saturday = false
+	 console.log(updatedUser)
+ }
+  User.findByIdAndUpdate(req.params.id, updatedUser, (err, data) => {  
   })
   res.redirect('/')
 })
@@ -92,7 +92,8 @@ users.put('/:id', isAuthenticated,  (req, res, next) => {
 // show page
 users.get('/:id', isAuthenticated,(req, res)=>{
     User.findById(req.params.id, (err, foundUser)=>{
-        res.render('users/show.ejs', {
+			console.log(foundUser)
+				res.render('users/show.ejs', {
             user:foundUser,
             currentUser: req.session.currentUser
         });
