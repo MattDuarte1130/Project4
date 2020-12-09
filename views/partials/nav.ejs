@@ -1,15 +1,20 @@
-<nav class= "navBar">
-    | <a href="/">Home</a> |
-    <a href="/group/new">Create A New Group</a> |
-    <div class="userNav">
-    <% if (currentUser) { %>
-    User: <a href="/users/<%= currentUser._id %>"><%= currentUser.username %></a>
-      <form action="/sessions?_method=DELETE" method="POST">
-        <input class="btnBackground" type="submit" value="Log Out"/>
-      </form>
-    <% } else { %>
-      </div>
-      <button class="btnBackground" type="button" name="button"><a href="/users/new">Sign Up</a></button>
-      <button class="btnBackground" type="button" name="button"><a href="/sessions/new">Log In</a></button>
-    <% } %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Schedule App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/group">Index</a></li>
+      <li><a href="/group/new">Create New Group</a></li>
+      <li><% if (currentUser) { %>
+      <a href="/users/<%= currentUser._id %>"><%= currentUser.username %></a></li>
+      <li>        <form action="/sessions?_method=DELETE" method="POST">
+                <input class="btn btn-info" type="submit" value="Log Out"/>
+              </form></li>
+      <% } else { %>
+        <li><a href="/users/new">Sign Up</a></li>
+        <li><a href="/sessions/new">Log In</a></li>
+      <% } %>
+    </ul>
+  </div>
 </nav>

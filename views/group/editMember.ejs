@@ -1,70 +1,71 @@
 <%-include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
-<div class="containerNew">
-    <h1>Edit Member</h1>
+<div class="page-header">
+    <h1 class="text-center">Edit Member</h1>
+  </div>
     <form method="POST" action="/group/<%=idForGroup%>/members/<%=memberId%>?_method=PUT">
-            <fieldset>
-              <label for="members">Member:</label>
+            <div class="form-group">
+              <p class="text-center"><label for="members">User:</label>
               <input id ="members" type="text" name="members"
               placeholder="members" value="<%=idOfGroupToEdit.members[memberId]%>">
-            </fieldset>
-            <fieldset>
-              <label for="sunday">Are you avaliable for Sunday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="sunday">Are you avaliable for Sunday?</label>
               <input id ="sunday" type="checkbox" name="sunday"
               <% if(idOfGroupToEdit.sunday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <fieldset>
-              <label for="monday">Are you avaliable for Monday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="monday">Are you avaliable for Monday?</label>
               <input id ="monday" type="checkbox" name="monday"
               <% if(idOfGroupToEdit.monday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <fieldset>
-              <label for="tuesday">Are you avaliable for Tuesday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="tuesday">Are you avaliable for Tuesday?</label>
               <input id ="tuesday" type="checkbox" name="tuesday"
               <% if(idOfGroupToEdit.tuesday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <fieldset>
-              <label for="wednesday">Are you avaliable for Wednesday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="wednesday">Are you avaliable for Wednesday?</label>
               <input id ="wednesday" type="checkbox" name="wednesday"
               <% if(idOfGroupToEdit.wednesday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <fieldset>
-              <label for="thursday">Are you avaliable for Thursday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="thursday">Are you avaliable for Thursday?</label>
               <input id ="thursday" type="checkbox" name="thursday"
               <% if(idOfGroupToEdit.thursday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <fieldset>
-              <label for="friday">Are you avaliable for Friday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="friday">Are you avaliable for Friday?</label>
               <input id ="friday" type="checkbox" name="friday"
               <% if(idOfGroupToEdit.friday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <fieldset>
-              <label for="saturday">Are you avaliable for Saturday?</label>
+            </div>
+            <div class="form-group">
+              <p class="text-center"><label for="saturday">Are you avaliable for Saturday?</label>
               <input id ="saturday" type="checkbox" name="saturday"
               <% if(idOfGroupToEdit.saturday[memberId]) { %>
                   checked
                 <% } %>
                 >
-            </fieldset>
-            <button class="btnBackground">Edit Member</button>
+            </div>
+            <p class="text-center"><button class="btn btn-info">Edit Member</button>
           </form>
-</div>
+
 <%-include('../partials/footer.ejs') %>

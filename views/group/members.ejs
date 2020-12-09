@@ -1,15 +1,14 @@
 <%-include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
-<h3>Members:</h3>
-<ul class="indexUl">
+<div class="page-header">
+  <h1 class="text-center">Member List</h1>
+</div>
+
+<div class="list-group">
     <% for(let i = 0; i < group.members.length; i++){ %>
-      <div class="indexContainer">
-      <li>
-        <h4 class='groupMembers'><a href="/group/<%=group.id%>/members/<%=[i]%>/"><%=group.members[i]; %></a></h4>
-        </li>
-        </div>
+        <p class="text-center"><a href="/group/<%=group.id%>/members/<%=[i]%>/" class="list-group-item"><%=group.members[i]; %></a>
     <% } %>
-</ul>
-<a href="/group/<%=group.id%>/members/add"><button>Add Member</button></a>
+</div>
+<p class="text-center"><a href="/group/<%=group.id%>/members/add"><button class="btn btn-info">Add Member</button></a>
 
 <%-include('../partials/footer.ejs') %>

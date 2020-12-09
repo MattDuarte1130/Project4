@@ -1,18 +1,13 @@
 <%-include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
-<div class="container">
-<h1 class="indexTitle">Group Index Page</h1>
- <ul class="indexUl">
+<div class="page-header">
+    <h1 class="text-center">Your Groups</h1>
+  </div>
+ <div class="list-group">
      <% for(let i = 0; i < group.length; i++){ %>
-       <div class="indexContainer">
-       <li>
-         <h3 class='playlistTitle'><%=group[i].title; %></h3>
-           <a href="/group/<%=group[i].id; %>"><img class= "indexImg" src="<%=group[i].img; %>" alt="Group's Image" width="320" height="180"></a><br>
-         </li>
-         </div>
+         <h3 class="text-center"><%=group[i].title; %></h3>
+           <p class="text-center"><a href="/group/<%=group[i].id; %>" href="#" class="list-group-item"><img class= "indexImg" src="<%=group[i].img; %>" alt="Group's Image" width="320" height="180"></a><br>
      <% } %>
-
-</ul>
+</div>
 
 <%-include('../partials/footer.ejs') %>
-</div>

@@ -1,25 +1,27 @@
 <%-include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
-<div class="playlistShowContainer">
-        <h1> <%=group.title; %> </h1>
+<div class="page-header">
+        <h1 class="text-center"> <%=group.title; %> </h1>
+        <div class="thumbnail">
+          <img src="<%=group.img; %>" alt="<%=group.title %>" width="640" height="360">
+        </div>
+        <h3 class="text-center"> Description: <%=group.description; %> </h3>
+        <h3 class="text-center"> Time: <%=group.startTime; %> - <%=group.endTime; %></h3>
+        <h3 class="text-center"><a href="/group/<%=group.id;%>/members">Members</a></h3>
 
-        <img class="groupShowImg" src="<%=group.img; %>" alt="<%=group.title %>" width="640" height="360">
-        <h3> Description: <%=group.description; %> </h3>
-        <h3><a href="/group/<%=group.id;%>/members">Members</a></h3>
-
-        <table border='1' cellspacing='1'>
+        <table class="table table-bordered">
           <tr>
-            <th bgcolor="#57b3ff"><%=group.title; %>'s Schedule</th>
-            <th bgcolor="#57b3ff">Sunday</th>
-            <th bgcolor="#57b3ff">Monday</th>
-            <th bgcolor="#57b3ff">Tuesday</th>
-            <th bgcolor="#57b3ff">Wednesday</th>
-            <th bgcolor="#57b3ff">Thursday</th>
-            <th bgcolor="#57b3ff">Friday</th>
-            <th bgcolor="#57b3ff">Saturday</th>
+            <th bgcolor="#57b3ff" class="text-center"><%=group.title; %>'s Schedule</th>
+            <th bgcolor="#57b3ff" class="text-center">Sunday</th>
+            <th bgcolor="#57b3ff" class="text-center">Monday</th>
+            <th bgcolor="#57b3ff" class="text-center">Tuesday</th>
+            <th bgcolor="#57b3ff" class="text-center">Wednesday</th>
+            <th bgcolor="#57b3ff" class="text-center">Thursday</th>
+            <th bgcolor="#57b3ff" class="text-center">Friday</th>
+            <th bgcolor="#57b3ff" class="text-center">Saturday</th>
           </tr>
           <tr>
-            <th bgcolor="#57b3ff">Availability</th>
+            <th bgcolor="#57b3ff" class="text-center">Availability</th>
             <% let sundayTrue = 0 %>
             <% let sundayFalse = 0 %>
             <% for(let i = 0; i < group.members.length; i++){ %>
@@ -30,11 +32,11 @@
               <% } %>
             <% } %>
             <% if(sundayTrue == group.maxMembers) { %>
-              <th bgcolor="#D4AF37">Max Avaliable</th>
+              <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                 <% } else if(sundayTrue >= group.minMembers){ %>
-                  <th bgcolor="#42f548">Avaliable</th>
+                  <th bgcolor="#42f548" class="text-center">Avaliable</th>
               <% } else { %>
-                  <th bgcolor="#ff5757">Not avaliable</th>
+                  <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
               <% } %>
                 <% let mondayTrue = 0 %>
                 <% let mondayFalse = 0 %>
@@ -46,11 +48,11 @@
                   <% } %>
                 <% } %>
                 <% if(mondayTrue == group.maxMembers) { %>
-                  <th bgcolor="#D4AF37">Max Avaliable</th>
+                  <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                     <% } else if(mondayTrue >= group.minMembers){ %>
-                      <th bgcolor="#42f548">Avaliable</th>
+                      <th bgcolor="#42f548" class="text-center">Avaliable</th>
                   <% } else { %>
-                      <th bgcolor="#ff5757">Not avaliable</th>
+                      <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
                   <% } %>
                     <% let tuesdayTrue = 0 %>
                     <% let tuesdayFalse = 0 %>
@@ -62,11 +64,11 @@
                       <% } %>
                     <% } %>
                     <% if(tuesdayTrue == group.maxMembers) { %>
-                      <th bgcolor="#D4AF37">Max Avaliable</th>
+                      <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                         <% } else if(tuesdayTrue >= group.minMembers){ %>
-                          <th bgcolor="#42f548">Avaliable</th>
+                          <th bgcolor="#42f548" class="text-center">Avaliable</th>
                       <% } else { %>
-                          <th bgcolor="#ff5757">Not avaliable</th>
+                          <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
                       <% } %>
                         <% let wednesdayTrue = 0 %>
                         <% let wednesdayFalse = 0 %>
@@ -78,11 +80,11 @@
                           <% } %>
                         <% } %>
                         <% if(wednesdayTrue == group.maxMembers) { %>
-                          <th bgcolor="#D4AF37">Max Avaliable</th>
+                          <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                             <% } else if(wednesdayTrue >= group.minMembers){ %>
-                              <th bgcolor="#42f548">Avaliable</th>
+                              <th bgcolor="#42f548" class="text-center">Avaliable</th>
                           <% } else { %>
-                              <th bgcolor="#ff5757">Not avaliable</th>
+                              <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
                           <% } %>
                             <% let thursdayTrue = 0 %>
                             <% let thursdayFalse = 0 %>
@@ -94,11 +96,11 @@
                               <% } %>
                             <% } %>
                             <% if(thursdayTrue == group.maxMembers) { %>
-                              <th bgcolor="#D4AF37">Max Avaliable</th>
+                              <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                                 <% } else if(thursdayTrue >= group.minMembers){ %>
-                                  <th bgcolor="#42f548">Avaliable</th>
+                                  <th bgcolor="#42f548" class="text-center">Avaliable</th>
                               <% } else { %>
-                                  <th bgcolor="#ff5757">Not avaliable</th>
+                                  <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
                               <% } %>
                                 <% let fridayTrue = 0 %>
                                 <% let fridayFalse = 0 %>
@@ -110,11 +112,11 @@
                                   <% } %>
                                 <% } %>
                                 <% if(fridayTrue == group.maxMembers) { %>
-                                  <th bgcolor="#D4AF37">Max Avaliable</th>
+                                  <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                                     <% } else if(fridayTrue >= group.minMembers){ %>
-                                      <th bgcolor="#42f548">Avaliable</th>
+                                      <th bgcolor="#42f548" class="text-center">Avaliable</th>
                                   <% } else { %>
-                                      <th bgcolor="#ff5757">Not avaliable</th>
+                                      <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
                                   <% } %>
                                     <% let saturdayTrue = 0 %>
                                     <% let saturdayFalse = 0 %>
@@ -126,19 +128,22 @@
                                       <% } %>
                                     <% } %>
                                       <% if(saturdayTrue == group.maxMembers) { %>
-                                        <th bgcolor="#D4AF37">Max Avaliable</th>
+                                        <th bgcolor="#D4AF37" class="text-center">Max Avaliable</th>
                                           <% } else if(saturdayTrue >= group.minMembers){ %>
-                                            <th bgcolor="#42f548">Avaliable</th>
+                                            <th bgcolor="#42f548" class="text-center">Avaliable</th>
                                         <% } else { %>
-                                            <th bgcolor="#ff5757">Not avaliable</th>
+                                            <th bgcolor="#ff5757" class="text-center">Not avaliable</th>
                                         <% } %>
           </tr>
         </table>
 
-        <p><a href="/group/<%=group.id;%>/edit "><button class="btnBackground">Edit group</button></a></p>
+        <% if(currentUser._id == group.userId){ %>
+        <p class="text-center"><a href="/group/<%=group.id;%>/edit "><button class="btn btn-info">Edit group</button></a></p>
             <form action="/group/<%=group.id; %>?_method=DELETE" method="POST">
-              <form>
-                <input class="btnBackground" type="submit" value="Delete group"/>
+              <p class="text-center"><form>
+                <input class="btn btn-info" type="submit" value="Delete group"/>
               </form>
+          <% } %>
+
 <%-include('../partials/footer.ejs') %>
 </div>

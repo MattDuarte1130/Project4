@@ -1,44 +1,7 @@
 <%-include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
-<div class="playlistShowContainer">
-        <h1> <%=user.username; %>'s Profile Page </h1>
-        <h3><%=user.username; %>'s Schedule </h3>
-        <% if(user.sunday == true) { %>
-           <h4 style="color:green">Sunday = avaliable</h4>
-        <%  } else { %>
-           <h4 style="color:red">Sunday = Not avaliable</h4>
-         <% } %>
-         <% if(user.monday == true) { %>
-           <h4 style="color:green">Monday = avaliable</h4>
-        <%  } else { %>
-           <h4 style="color:red">Monday = Not avaliable</h4>
-         <% } %>
-          <% if(user.tuesday == true) { %>
-            <h4 style="color:green">Tuesday = avaliable</h4>
-         <%  } else { %>
-            <h4 style="color:red">Tuesday = Not avaliable</h4>
-          <% } %>
-           <% if(user.wednesday == true) { %>
-             <h4 style="color:green">Wednesday = avaliable</h4>
-          <%  } else { %>
-             <h4 style="color:red">Wednesday = Not avaliable</h4>
-           <% } %>
-            <% if(user.thursday == true) { %>
-              <h4 style="color:green">Thursday = avaliable</h4>
-           <%  } else { %>
-              <h4 style="color:red">Thursday = Not avaliable</h4>
-            <% } %>
-             <% if(user.friday == true) { %>
-               <h4 style="color:green">Friday = avaliable</h4>
-            <%  } else { %>
-               <h4 style="color:red">Friday = Not avaliable</h4>
-             <% } %>
-              <% if(user.saturday == true) { %>
-                <h4 style="color:green">Saturday = avaliable</h4>
-             <%  } else { %>
-                <h4 style="color:red">Saturday = Not avaliable</h4>
-              <% } %>
-
-        <p><a href="/users/<%=user.id;%>/edit "><button class="btnBackground">Edit Schedule</button></a></p>
-<%-include('../partials/footer.ejs') %>
+<div class="page-header">
+    <h1 class="text-center">Your Profile Page</h1>
 </div>
+<h3 class="text-center">More Features Coming Soon</h3>
+<%-include('../partials/footer.ejs') %>

@@ -1,10 +1,9 @@
 <%-include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
-<div class="playlistShowContainer">
-<h1><%=group.members[memberId]%></h1>
-
-  <div class="itemContainer">
-    <table border='1' cellspacing='1'>
+<div class="page-header">
+<h1 class="text-center"><%=group.members[memberId]%></h1>
+</div>
+    <table class="table table-bordered">
       <tr>
         <th bgcolor="#57b3ff"><%=group.members[memberId]; %>'s Schedule</th>
         <th bgcolor="#57b3ff">Sunday</th>
@@ -55,15 +54,15 @@
       </tr>
     </table>
 
-            <p><a href="/group/<%=group.id%>/members"><button class="btnBackground">Back To Group</button></a></p>
+            <p class="text-center"><a href="/group/<%=group.id%>/members"><button class="btn btn-info">Back To Group</button></a></p>
       <% if(currentUser.username == group.members[memberId] ) { %>
-        <p><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btnBackground" >Edit Member</button></a></p>
+        <p class="text-center"><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btn btn-info" >Edit Member</button></a></p>
       <%  } else if(currentUser._id == group.userId){ %>
-        <p><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btnBackground" >Edit Member</button></a></p>
+        <p class="text-center"><a href="/group/<%=group.id%>/members/<%= memberId %>/edit "><button class="btn btn-info" >Edit Member</button></a></p>
        <% } %>
 
-  </div>
-  </div>
+
+
 
 
 <%-include('../partials/footer.ejs') %>

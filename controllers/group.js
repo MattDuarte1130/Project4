@@ -62,7 +62,7 @@ router.get('/:id', isAuthenticated,(req, res)=>{
 // // delete
 router.delete('/:id', isAuthenticated, (req,res) => {
   Group.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('/');
+    res.redirect('/group');
     console.log('deleted Group')
   })
 })
@@ -88,6 +88,8 @@ router.put('/:id', isAuthenticated, (req, res, next) => {
    img: req.body.img,
 	 minMembers: req.body.minMembers,
 	 maxMembers: req.body.maxMembers,
+	 startTime: req.body.startTime,
+	 endTime: req.body.endTime,
  }
   Group.findByIdAndUpdate(req.params.id, updatedGroup, (err, data) => {
       if (err) {

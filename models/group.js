@@ -4,6 +4,8 @@ const groupSchema = new mongoose.Schema({
     userId: {type: String},
     title:  { type: String, required: true },
     description:  { type: String, required: true },
+    startTime: { type: String, required: true },
+    endTime: { type: String, required: true },
     img: { type: String, required: true },
     members: [String],
     minMembers: {type: Number, default: 0, required: true },
