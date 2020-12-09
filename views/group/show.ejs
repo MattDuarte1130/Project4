@@ -6,7 +6,6 @@
         <img class="groupShowImg" src="<%=group.img; %>" alt="<%=group.title %>" width="640" height="360">
         <h3> Description: <%=group.description; %> </h3>
         <h3><a href="/group/<%=group.id;%>/members">Members</a></h3>
-        <p><a href="/group/<%=group.id;%>/edit "><button class="btnBackground">Edit group</button></a></p>
 
         <table border='1' cellspacing='1'>
           <tr>
@@ -30,25 +29,29 @@
                   <% sundayFalse ++ %>
               <% } %>
             <% } %>
-              <% if(sundayTrue >= group.minMembers) { %>
-                <th bgcolor="#42f548">Avaliable</th>
-                  <% } else { %>
-                    <th bgcolor="#ff5757">Not avaliable</th>
-                <% } %>
+            <% if(sundayTrue == group.maxMembers) { %>
+              <th bgcolor="#D4AF37">Max Avaliable</th>
+                <% } else if(sundayTrue >= group.minMembers){ %>
+                  <th bgcolor="#42f548">Avaliable</th>
+              <% } else { %>
+                  <th bgcolor="#ff5757">Not avaliable</th>
+              <% } %>
                 <% let mondayTrue = 0 %>
                 <% let mondayFalse = 0 %>
-                <% for(let i = 0; i < group.members.length; i++){ %>
+                <% for(let i = 0; i <= group.members.length; i++){ %>
                 <% if(group.monday[i] == true) { %>
                   <% mondayTrue ++  %>
                     <% } else if(group.monday[i] == false) { %>
                       <% mondayFalse ++ %>
                   <% } %>
                 <% } %>
-                  <% if(mondayTrue >= group.minMembers) { %>
-                    <th bgcolor="#42f548">Avaliable</th>
-                      <% } else { %>
-                        <th bgcolor="#ff5757">Not avaliable</th>
-                    <% } %>
+                <% if(mondayTrue == group.maxMembers) { %>
+                  <th bgcolor="#D4AF37">Max Avaliable</th>
+                    <% } else if(mondayTrue >= group.minMembers){ %>
+                      <th bgcolor="#42f548">Avaliable</th>
+                  <% } else { %>
+                      <th bgcolor="#ff5757">Not avaliable</th>
+                  <% } %>
                     <% let tuesdayTrue = 0 %>
                     <% let tuesdayFalse = 0 %>
                     <% for(let i = 0; i < group.members.length; i++){ %>
@@ -58,25 +61,29 @@
                           <% tuesdayFalse ++ %>
                       <% } %>
                     <% } %>
-                      <% if(tuesdayTrue >= group.minMembers) { %>
-                        <th bgcolor="#42f548">Avaliable</th>
-                          <% } else { %>
-                            <th bgcolor="#ff5757">Not avaliable</th>
-                        <% } %>
+                    <% if(tuesdayTrue == group.maxMembers) { %>
+                      <th bgcolor="#D4AF37">Max Avaliable</th>
+                        <% } else if(tuesdayTrue >= group.minMembers){ %>
+                          <th bgcolor="#42f548">Avaliable</th>
+                      <% } else { %>
+                          <th bgcolor="#ff5757">Not avaliable</th>
+                      <% } %>
                         <% let wednesdayTrue = 0 %>
                         <% let wednesdayFalse = 0 %>
                         <% for(let i = 0; i < group.members.length; i++){ %>
                         <% if(group.wednesday[i] == true) { %>
-                          <% mondayTrue ++  %>
+                          <% wednesdayTrue ++  %>
                             <% } else if(group.wednesday[i] == false) { %>
                               <% wednesdayFalse ++ %>
                           <% } %>
                         <% } %>
-                          <% if(wednesdayTrue >= group.minMembers) { %>
-                            <th bgcolor="#42f548">Avaliable</th>
-                              <% } else { %>
-                                <th bgcolor="#ff5757">Not avaliable</th>
-                            <% } %>
+                        <% if(wednesdayTrue == group.maxMembers) { %>
+                          <th bgcolor="#D4AF37">Max Avaliable</th>
+                            <% } else if(wednesdayTrue >= group.minMembers){ %>
+                              <th bgcolor="#42f548">Avaliable</th>
+                          <% } else { %>
+                              <th bgcolor="#ff5757">Not avaliable</th>
+                          <% } %>
                             <% let thursdayTrue = 0 %>
                             <% let thursdayFalse = 0 %>
                             <% for(let i = 0; i < group.members.length; i++){ %>
@@ -86,11 +93,13 @@
                                   <% thursdayFalse ++ %>
                               <% } %>
                             <% } %>
-                              <% if(thursdayTrue >= group.minMembers) { %>
-                                <th bgcolor="#42f548">Avaliable</th>
-                                  <% } else { %>
-                                    <th bgcolor="#ff5757">Not avaliable</th>
-                                <% } %>
+                            <% if(thursdayTrue == group.maxMembers) { %>
+                              <th bgcolor="#D4AF37">Max Avaliable</th>
+                                <% } else if(thursdayTrue >= group.minMembers){ %>
+                                  <th bgcolor="#42f548">Avaliable</th>
+                              <% } else { %>
+                                  <th bgcolor="#ff5757">Not avaliable</th>
+                              <% } %>
                                 <% let fridayTrue = 0 %>
                                 <% let fridayFalse = 0 %>
                                 <% for(let i = 0; i < group.members.length; i++){ %>
@@ -100,11 +109,13 @@
                                       <% fridayFalse ++ %>
                                   <% } %>
                                 <% } %>
-                                  <% if(fridayTrue >= group.minMembers) { %>
-                                    <th bgcolor="#42f548">Avaliable</th>
-                                      <% } else { %>
-                                        <th bgcolor="#ff5757">Not avaliable</th>
-                                    <% } %>
+                                <% if(fridayTrue == group.maxMembers) { %>
+                                  <th bgcolor="#D4AF37">Max Avaliable</th>
+                                    <% } else if(fridayTrue >= group.minMembers){ %>
+                                      <th bgcolor="#42f548">Avaliable</th>
+                                  <% } else { %>
+                                      <th bgcolor="#ff5757">Not avaliable</th>
+                                  <% } %>
                                     <% let saturdayTrue = 0 %>
                                     <% let saturdayFalse = 0 %>
                                     <% for(let i = 0; i < group.members.length; i++){ %>
@@ -114,14 +125,17 @@
                                           <% saturdayFalse ++ %>
                                       <% } %>
                                     <% } %>
-                                      <% if(saturdayTrue >= group.minMembers) { %>
-                                        <th bgcolor="#42f548">Avaliable</th>
-                                          <% } else { %>
+                                      <% if(saturdayTrue == group.maxMembers) { %>
+                                        <th bgcolor="#D4AF37">Max Avaliable</th>
+                                          <% } else if(saturdayTrue >= group.minMembers){ %>
+                                            <th bgcolor="#42f548">Avaliable</th>
+                                        <% } else { %>
                                             <th bgcolor="#ff5757">Not avaliable</th>
                                         <% } %>
           </tr>
         </table>
 
+        <p><a href="/group/<%=group.id;%>/edit "><button class="btnBackground">Edit group</button></a></p>
             <form action="/group/<%=group.id; %>?_method=DELETE" method="POST">
               <form>
                 <input class="btnBackground" type="submit" value="Delete group"/>

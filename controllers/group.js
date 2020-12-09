@@ -86,6 +86,8 @@ router.put('/:id', isAuthenticated, (req, res, next) => {
    title: req.body.title,
    description: req.body.description,
    img: req.body.img,
+	 minMembers: req.body.minMembers,
+	 maxMembers: req.body.maxMembers,
  }
   Group.findByIdAndUpdate(req.params.id, updatedGroup, (err, data) => {
       if (err) {
