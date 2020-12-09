@@ -10,31 +10,59 @@
             </fieldset>
             <fieldset>
               <label for="sunday">Are you avaliable for Sunday?</label>
-              <input id ="sunday" type="checkbox" name="sunday">
+              <input id ="sunday" type="checkbox" name="sunday"
+              <% if(idOfGroupToEdit.sunday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <fieldset>
               <label for="monday">Are you avaliable for Monday?</label>
-              <input id ="monday" type="checkbox" name="monday">
+              <input id ="monday" type="checkbox" name="monday"
+              <% if(idOfGroupToEdit.monday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <fieldset>
               <label for="tuesday">Are you avaliable for Tuesday?</label>
-              <input id ="tuesday" type="checkbox" name="tuesday">
+              <input id ="tuesday" type="checkbox" name="tuesday"
+              <% if(idOfGroupToEdit.tuesday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <fieldset>
               <label for="wednesday">Are you avaliable for Wednesday?</label>
-              <input id ="wednesday" type="checkbox" name="wednesday">
+              <input id ="wednesday" type="checkbox" name="wednesday"
+              <% if(idOfGroupToEdit.wednesday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <fieldset>
               <label for="thursday">Are you avaliable for Thursday?</label>
-              <input id ="thursday" type="checkbox" name="thursday">
+              <input id ="thursday" type="checkbox" name="thursday"
+              <% if(idOfGroupToEdit.thursday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <fieldset>
               <label for="friday">Are you avaliable for Friday?</label>
-              <input id ="friday" type="checkbox" name="friday">
+              <input id ="friday" type="checkbox" name="friday"
+              <% if(idOfGroupToEdit.friday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <fieldset>
               <label for="saturday">Are you avaliable for Saturday?</label>
-              <input id ="saturday" type="checkbox" name="saturday">
+              <input id ="saturday" type="checkbox" name="saturday"
+              <% if(idOfGroupToEdit.saturday[memberId]) { %>
+                  checked
+                <% } %>
+                >
             </fieldset>
             <button class="btnBackground">Edit Member</button>
           </form>
