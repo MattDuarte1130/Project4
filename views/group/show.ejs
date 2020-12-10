@@ -7,7 +7,9 @@
         </div>
         <h3 class="text-center"> Description: <%=group.description; %> </h3>
         <h3 class="text-center"> Time: <%=group.startTime; %> - <%=group.endTime; %></h3>
-        <h3 class="text-center"><a href="/group/<%=group.id;%>/members">Members</a></h3>
+        <h3 class="text-center"><a href="/group/<%=group.id;%>/members">Member List</a></h3>
+        <h4 class="text-center"> Minimum Members Needed: <%=group.minMembers; %></h4>
+        <h4 class="text-center"> Maximum Members Needed: <%=group.maxMembers; %></h4>
 
         <table class="table table-bordered">
           <tr>

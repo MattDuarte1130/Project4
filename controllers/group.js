@@ -32,7 +32,7 @@ router.post('/', isAuthenticated, (req,res) => {
 		if (error){
 			console.log(error)
 		}
-    res.redirect('/');
+    res.redirect('/group');
   });
 })
 
