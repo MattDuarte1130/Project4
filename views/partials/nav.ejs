@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="/">Schedule App</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/group">Index</a></li>
+      <li><a href="/group">My Groups</a></li>
       <li><a href="/group/new">Create New Group</a></li>
       <li><% if (currentUser) { %>
       <a href="/users/<%= currentUser._id %>"><%= currentUser.username %></a></li>

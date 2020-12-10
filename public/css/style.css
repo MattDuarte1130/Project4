@@ -13,3 +13,11 @@
 .textBg {
   background: rgba(0, 0, 0, 0.4);
 }
+
+#usernameColor {
+  color: green;
+}
+
+#usernameColor2 {
+  color: blue;
+}

@@ -6,8 +6,12 @@
 
 <div class="list-group">
     <% for(let i = 0; i < group.members.length; i++){ %>
-        <p class="text-center"><a href="/group/<%=group.id%>/members/<%=[i]%>/" class="list-group-item"><%=group.members[i]; %></a>
-    <% } %>
+      <% if (group.members[i] == currentUser.username) {%>
+        <p class="text-center"><a href="/group/<%=group.id%>/members/<%=[i]%>/" class="list-group-item" id="usernameColor"><%=group.members[i]; %></a>
+    <% } else { %>
+      <p class="text-center"><a href="/group/<%=group.id%>/members/<%=[i]%>/" class="list-group-item" id="usernameColor2"><%=group.members[i]; %></a>
+  <% } %>
+<% } %>
 </div>
 <p class="text-center"><a href="/group/<%=group.id%>/members/add"><button class="btn btn-info">Add Member</button></a>
 
