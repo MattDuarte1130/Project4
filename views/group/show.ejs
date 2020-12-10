@@ -33,7 +33,7 @@
                   <% sundayFalse ++ %>
               <% } %>
             <% } %>
-            <% if(sundayTrue == group.maxMembers) { %>
+            <% if(sundayTrue >= group.maxMembers) { %>
               <th bgcolor="#D4AF37" class="text-center"><%=sundayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                 <% } else if(sundayTrue >= group.minMembers){ %>
                   <th bgcolor="#42f548" class="text-center"><%=sundayTrue%> / <%=group.maxMembers%> Avaliable</th>
@@ -49,7 +49,7 @@
                       <% mondayFalse ++ %>
                   <% } %>
                 <% } %>
-                <% if(mondayTrue == group.maxMembers) { %>
+                <% if(mondayTrue >= group.maxMembers) { %>
                   <th bgcolor="#D4AF37" class="text-center"><%=mondayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                     <% } else if(mondayTrue >= group.minMembers){ %>
                       <th bgcolor="#42f548" class="text-center"><%=mondayTrue%> / <%=group.maxMembers%> Avaliable</th>
@@ -65,7 +65,7 @@
                           <% tuesdayFalse ++ %>
                       <% } %>
                     <% } %>
-                    <% if(tuesdayTrue == group.maxMembers) { %>
+                    <% if(tuesdayTrue >= group.maxMembers) { %>
                       <th bgcolor="#D4AF37" class="text-center"><%=tuesdayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                         <% } else if(tuesdayTrue >= group.minMembers){ %>
                           <th bgcolor="#42f548" class="text-center"><%=tuesdayTrue%> / <%=group.maxMembers%> Avaliable</th>
@@ -81,7 +81,7 @@
                               <% wednesdayFalse ++ %>
                           <% } %>
                         <% } %>
-                        <% if(wednesdayTrue == group.maxMembers) { %>
+                        <% if(wednesdayTrue >= group.maxMembers) { %>
                           <th bgcolor="#D4AF37" class="text-center"><%=wednesdayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                             <% } else if(wednesdayTrue >= group.minMembers){ %>
                               <th bgcolor="#42f548" class="text-center"><%=wednesdayTrue%> / <%=group.maxMembers%> Avaliable</th>
@@ -97,7 +97,7 @@
                                   <% thursdayFalse ++ %>
                               <% } %>
                             <% } %>
-                            <% if(thursdayTrue == group.maxMembers) { %>
+                            <% if(thursdayTrue >= group.maxMembers) { %>
                               <th bgcolor="#D4AF37" class="text-center"><%=thursdayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                                 <% } else if(thursdayTrue >= group.minMembers){ %>
                                   <th bgcolor="#42f548" class="text-center"><%=thursdayTrue%> / <%=group.maxMembers%> Avaliable</th>
@@ -113,7 +113,7 @@
                                       <% fridayFalse ++ %>
                                   <% } %>
                                 <% } %>
-                                <% if(fridayTrue == group.maxMembers) { %>
+                                <% if(fridayTrue >= group.maxMembers) { %>
                                   <th bgcolor="#D4AF37" class="text-center"><%=fridayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                                     <% } else if(fridayTrue >= group.minMembers){ %>
                                       <th bgcolor="#42f548" class="text-center"><%=fridayTrue%> / <%=group.maxMembers%> Avaliable</th>
@@ -129,7 +129,7 @@
                                           <% saturdayFalse ++ %>
                                       <% } %>
                                     <% } %>
-                                      <% if(saturdayTrue == group.maxMembers) { %>
+                                      <% if(saturdayTrue >= group.maxMembers) { %>
                                         <th bgcolor="#D4AF37" class="text-center"><%=saturdayTrue%> / <%=group.maxMembers%> Max Avaliable</th>
                                           <% } else if(saturdayTrue >= group.minMembers){ %>
                                             <th bgcolor="#42f548" class="text-center"><%=saturdayTrue%> / <%=group.maxMembers%> Avaliable</th>
