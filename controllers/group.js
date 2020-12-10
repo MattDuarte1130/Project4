@@ -99,7 +99,7 @@ router.put('/:id', isAuthenticated, (req, res, next) => {
         console.log('updated')
       }
   })
-  res.redirect('/')
+  res.redirect('/group')
 })
 
 // members show page
