@@ -9,6 +9,16 @@ https://group-schedule.herokuapp.com/
 
 This web app is to allow users to create a group where they want to host an event, such as pick up games, boardgame night, or even meetings. The user will insert the time they want to host the event. The user will then be allowed to add as many other users to the group. Once all the members have been added, each user will update their schedule to instert what days they are avaliable to join the event. The group has a minimum and maximum amount of members they need to host the event. The group schedule will then compare all the member's schedules to see what days they can host the event. If the minimum amount of members are achieved that day will turn green and say how many members out of the maximum can attend and say avaliable next to it. If the maximum amount of members is reached the day will be golden and say Max Avaliable. This app is to help organize a group without having to reach out to each individual to see if they are avaliable. 
 
+## List of Technologies
+1. Node
+2. Mongoose
+3. Express JS
+4. Bootstrap 3
+
+## How to Install 
+1. Clone this repository
+2. Then npm install when it is cloned
+
 ## User Story
 1. The user Logs in or signs up on home page.
 2. The user can then click my groups on the nav bar to see the group index page.
