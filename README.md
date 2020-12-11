@@ -3,7 +3,7 @@ by Matt Duarte
 https://group-schedule.herokuapp.com/
 
 ## Wireframe
-![alt text](https://i.imgur.com/wvpcauh.png "Wireframe")
+![alt text](https://i.imgur.com/UIS4d1f.png "Wireframe")
 
 ## Description
 
